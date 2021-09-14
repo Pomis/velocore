@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 /// Converts String to Color
-/// ex '#6B7AFF' to Color(0xff6B7AFF)
+/// e.g. '#6B7AFF' to Color(0xff6B7AFF)
 extension ColorExtension on String {
   Color? toColor() {
     var hexColor = replaceAll('#', '');
