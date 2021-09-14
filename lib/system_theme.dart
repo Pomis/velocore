@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-/// Usage `SystemChrome.setSystemUIOverlayStyle(systemTheme);`
+/// Usage `SystemChrome.setSystemUIOverlayStyle(getSystemTheme(theme));`
 SystemUiOverlayStyle getSystemTheme(ThemeData theme) {
   return SystemUiOverlayStyle(
     statusBarColor: Colors.transparent,
