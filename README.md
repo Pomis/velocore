@@ -1,14 +1,17 @@
 # velocore
 
-A new Flutter package project.
+Collection of reusable widgets and utils.
 
-## Getting Started
+You can add it to your project by adding this to your pubspec.yaml:
+`velocore: 0.0.1-dev.1`
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+Some of widgets: 
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+`ScrollKeyboardCloser`
+Hide keyboard on scroll
+
+`ScrollableColumn`
+Column, where you can use `Expanded` and `Spacer`
+
+`ResizableSliverAppBar`
+Sliver Widget that can change it's height according to content

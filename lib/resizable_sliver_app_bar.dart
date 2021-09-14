@@ -4,8 +4,10 @@ import 'measure_size.dart';
 
 typedef SliverAppBarBuilder = Widget Function(double toolbarHeight, double expandedHeight);
 
-class SliverAppBarMeasureWidget extends StatefulWidget {
-  const SliverAppBarMeasureWidget({
+/// Widget that could be used instead of SliverAppBar and has ability to change 
+/// it's size according to content height
+class ResizableSliverAppBar extends StatefulWidget {
+  const ResizableSliverAppBar({
     Key? key,
     this.header,
     this.title,
@@ -17,10 +19,10 @@ class SliverAppBarMeasureWidget extends StatefulWidget {
   final SliverAppBarBuilder builder;
 
   @override
-  State<StatefulWidget> createState() => _SliverAppBarMeasureWidgetState();
+  State<StatefulWidget> createState() => _ResizableSliverAppBarState();
 }
 
-class _SliverAppBarMeasureWidgetState extends State<SliverAppBarMeasureWidget> {
+class _ResizableSliverAppBarState extends State<ResizableSliverAppBar> {
   double _toolbarHeight = 0;
   double _headerHeight = 0;
 
