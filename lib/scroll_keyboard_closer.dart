@@ -1,9 +1,9 @@
 import 'package:flutter/widgets.dart';
 
 class ScrollKeyboardCloser extends StatelessWidget {
-  final Widget child;
-
   const ScrollKeyboardCloser({required this.child});
+
+  final Widget child;
 
   @override
   Widget build(BuildContext context) {

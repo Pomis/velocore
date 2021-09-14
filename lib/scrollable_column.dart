@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:velocore/scroll_keyboard_closer.dart';
 
 class ScrollableColumn extends StatelessWidget {
-  final List<Widget> children;
+  const ScrollableColumn({required this.children});
 
-  const ScrollableColumn({
-    required this.children,
-  });
+  final List<Widget> children;
 
   @override
   Widget build(BuildContext context) {

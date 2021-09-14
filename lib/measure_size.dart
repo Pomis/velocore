@@ -4,14 +4,14 @@ import 'package:flutter/scheduler.dart';
 typedef OnWidgetSizeChange = void Function(Size size);
 
 class MeasureSize extends StatefulWidget {
-  final Widget child;
-  final OnWidgetSizeChange onChange;
-
   const MeasureSize({
     Key? key,
     required this.onChange,
     required this.child,
   }) : super(key: key);
+
+  final Widget child;
+  final OnWidgetSizeChange onChange;
 
   @override
   _MeasureSizeState createState() => _MeasureSizeState();
@@ -19,6 +19,7 @@ class MeasureSize extends StatefulWidget {
 
 class _MeasureSizeState extends State<MeasureSize> {
   final _widgetKey = GlobalKey();
+
   Size? _oldSize;
 
   @override

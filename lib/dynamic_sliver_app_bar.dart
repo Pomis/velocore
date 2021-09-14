@@ -2,20 +2,19 @@ import 'package:flutter/material.dart';
 
 import 'measure_size.dart';
 
-typedef SliverAppBarBuilder = Widget Function(
-    double toolbarHeight, double expandedHeight);
+typedef SliverAppBarBuilder = Widget Function(double toolbarHeight, double expandedHeight);
 
 class SliverAppBarMeasureWidget extends StatefulWidget {
-  final Widget? header;
-  final Widget? title;
-  final SliverAppBarBuilder builder;
-
   const SliverAppBarMeasureWidget({
     Key? key,
     this.header,
     this.title,
     required this.builder,
   }) : super(key: key);
+
+  final Widget? header;
+  final Widget? title;
+  final SliverAppBarBuilder builder;
 
   @override
   State<StatefulWidget> createState() => _SliverAppBarMeasureWidgetState();
@@ -39,8 +38,7 @@ class _SliverAppBarMeasureWidgetState extends State<SliverAppBarMeasureWidget> {
     return Stack(
       children: [
         _measuringContainer(),
-        if (_toolbarHeight != 0 &&
-            (widget.header == null || _headerHeight != 0))
+        if (_toolbarHeight != 0 && (widget.header == null || _headerHeight != 0))
           widget.builder(_toolbarHeight, expandedHeight()),
       ],
     );
