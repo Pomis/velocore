@@ -1,11 +1,11 @@
 name: velocore
 description: Reusable ad hocs
-version: 0.0.1-dev.1
+version: 0.0.2
 homepage: https://github.com/Pomis/velocore
 
 environment:
-  sdk: ">=2.13.0 <3.0.0"
-  flutter: ">=2.2.0"
+  sdk: '>=3.2.3 <4.0.0'
+  flutter: ">=3.22.0"
 
 dependencies:
   flutter:

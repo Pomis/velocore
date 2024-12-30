@@ -11,7 +11,10 @@ Some of widgets:
 Hide keyboard on scroll
 
 `ScrollableColumn`
-Column, where you can use `Expanded` and `Spacer`
+Column, where you can use `Expanded` and `Spacer` while being in a scroll view
 
 `ResizableSliverAppBar`
 Sliver Widget that can change it's height according to content
+
+`CustomSlopeTapDetector`
+A tap detector with a customizable touch slope
