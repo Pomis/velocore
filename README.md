@@ -3,7 +3,7 @@
 Collection of reusable widgets and utils.
 
 You can add it to your project by adding this to your pubspec.yaml:
-`velocore: 0.0.2`
+`velocore: 0.0.5`
 
 Some of widgets: 
 

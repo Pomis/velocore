@@ -1,5 +1,4 @@
-import 'dart:io';
-
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class TapArea extends StatefulWidget {
@@ -16,13 +15,16 @@ class TapArea extends StatefulWidget {
     required this.onTap,
     this.onLongTap,
     this.padding,
-    this.borderRadius ,
+    this.borderRadius,
     this.useInkResponse = false,
     this.isRippleEffectOnAndroidDisabled = false,
   });
 
   @override
-  State<TapArea> createState() => Platform.isAndroid ? _TapAreaAndroidState() : _TapAreaIosState();
+  State<TapArea> createState() =>
+      defaultTargetPlatform == TargetPlatform.android
+          ? _TapAreaAndroidState()
+          : _TapAreaIosState();
 }
 
 class _TapAreaAndroidState extends State<TapArea> {
@@ -69,10 +71,11 @@ class _TapAreaIosState extends State<TapArea> {
 
   @override
   Widget build(BuildContext context) {
-    if (widget.onTap == null && widget.onLongTap == null) return Padding(
-      padding: widget.padding ?? EdgeInsets.zero,
-      child: widget.child,
-    );
+    if (widget.onTap == null && widget.onLongTap == null)
+      return Padding(
+        padding: widget.padding ?? EdgeInsets.zero,
+        child: widget.child,
+      );
 
     return GestureDetector(
       onTapDown: (_) {
@@ -94,9 +97,13 @@ class _TapAreaIosState extends State<TapArea> {
       onLongPress: widget.onLongTap,
       child: Focus(
         child: MouseRegion(
-          child: Opacity(
+          child: AnimatedOpacity(
             opacity: _isDown ? 0.7 : 1.0,
-            child: Padding(padding: widget.padding ?? EdgeInsets.zero, child: widget.child),
+            duration: const Duration(milliseconds: 100),
+            child: Padding(
+              padding: widget.padding ?? EdgeInsets.zero,
+              child: widget.child,
+            ),
           ),
         ),
       ),
